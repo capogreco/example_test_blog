@@ -115,7 +115,9 @@ export default function LandingSketch() {
             ctx.textAlign    = `center`
             ctx.textBaseline = `middle`
             ctx.font         = `bold 50px "Clarity City"`
-            ctx.fillText (`Blog Template 2.0`, cnv.width / 2, cnv.height / 2)
+
+            const text = `IMPRESS ME`
+            ctx.fillText (text, cnv.width / 2, cnv.height / 2)
 
             requestAnimationFrame (drawFrame)
          }
