@@ -1,18 +1,19 @@
 import { useEffect, useRef } from "preact/hooks"
 import ThemeToggle from "@/islands/ThemeToggle.tsx"
+import AudioToggle from "@/islands/AudioToggle.tsx"
 
 class SinuSquare {
-   private x_speed: number = 0
-   private y_rate: number = 0
+   private x_speed       : number = 0
+   private y_rate        : number = 0
    private y_phase_offset: number = 0
    private x_phase_offset: number = 0
-   private size: number = 0
+   private size          : number = 0
 
    constructor (
       x_speed: number, 
       y_rate : number, 
-      x_phase : number,
-      y_phase : number 
+      x_phase: number,
+      y_phase: number,
    ) {
       this.x_speed        = x_speed
       this.y_rate         = y_rate
@@ -42,7 +43,7 @@ class SinuSquare {
    }
 }
 
-export default function LandingSketch() {
+export default function LandingSketch () {
    const canvasRef = useRef <HTMLCanvasElement> (null)   
 
    useEffect (() => {
@@ -76,7 +77,7 @@ export default function LandingSketch() {
          }
 
          // Create squares 
-         const x_speed = 0.05
+         const x_speed = 0.03
          const y_rate  = 0.01
          
          // Create regular squares
@@ -111,10 +112,9 @@ export default function LandingSketch() {
             })
 
             ctx.fillStyle    = fgColour
-            ctx.font         = `bold 20px sans-serif`
             ctx.textAlign    = `center`
             ctx.textBaseline = `middle`
-            ctx.font         = `bold 50px "Clarity City"`
+            ctx.font         = `bold 24px "Clarity City"`
 
             const text = `IMPRESS ME`
             ctx.fillText (text, cnv.width / 2, cnv.height / 2)
@@ -138,6 +138,9 @@ export default function LandingSketch() {
          <canvas ref={ canvasRef }></canvas>
          <div style={{ position: "absolute", top: "1rem", right: "1rem", zIndex: 20 }}>
             <ThemeToggle />
+         </div>
+         <div style={{ position: "absolute", top: "1rem", left: "1rem", zIndex: 20 }}>
+            <AudioToggle />
          </div>
       </div>
    );

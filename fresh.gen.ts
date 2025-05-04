@@ -8,6 +8,7 @@ import * as $_app from "./routes/_app.tsx";
 import * as $blog from "./routes/blog.tsx";
 import * as $feed from "./routes/feed.ts";
 import * as $index from "./routes/index.tsx";
+import * as $AudioToggle from "./islands/AudioToggle.tsx";
 import * as $CodeBlockToggle from "./islands/CodeBlockToggle.tsx";
 import * as $LandingSketch from "./islands/LandingSketch.tsx";
 import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
@@ -23,6 +24,7 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/AudioToggle.tsx": $AudioToggle,
     "./islands/CodeBlockToggle.tsx": $CodeBlockToggle,
     "./islands/LandingSketch.tsx": $LandingSketch,
     "./islands/ThemeToggle.tsx": $ThemeToggle,

@@ -14,9 +14,10 @@ export default function LandingPage() {
                cursor: "pointer" 
             }}
             onClick={(e) => {
-               // Don't navigate if clicking on the theme toggle (or its children)
+               // Don't navigate if clicking on the theme toggle or audio toggle (or their children)
                const target = e.target as HTMLElement;
-               if (target.closest('button[aria-label*="Switch to"]')) {
+               if (target.closest('button[aria-label*="Switch to"]') || 
+                   target.closest('button[aria-label*="Turn audio"]')) {
                   e.preventDefault();
                }
             }}
